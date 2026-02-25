@@ -1,7 +1,6 @@
-package com.thetestingacademy;
+package com.thetestingacademy.ex01_Selenium;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 
 public class Selenium001 {
     public static void main(String[] args) {
