@@ -1,0 +1,34 @@
+package com.thetestingacademy.ex_06_Web_Tables;
+
+import io.qameta.allure.Description;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import java.util.List;
+
+public class TestSelenium_WebTables2 {
+    @Test
+    @Description("Testcase description")
+    public void test_web_table_login() {
+        WebDriver driver=new ChromeDriver();
+        driver.get("https://awesomeqa.com/webtable1.html");
+        driver.manage().window().maximize();
+
+        WebElement table=driver.findElement(By.xpath("//table[@summary=\"Sample Table\"]/tbody"));
+        List<WebElement>row_tables=driver.findElements(By.tagName("tr"));
+
+        for (int i=0;i<row_tables.size();i++){
+            List<WebElement>column_tables=row_tables.get(i).findElements(By.tagName("td"));
+            for (WebElement c:column_tables){
+                System.out.println(c.getText());
+            }
+
+        }
+            }
+        }
+
+
+

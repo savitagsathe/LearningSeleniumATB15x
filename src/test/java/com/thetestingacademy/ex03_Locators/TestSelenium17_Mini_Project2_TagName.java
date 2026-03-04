@@ -52,7 +52,7 @@ public class TestSelenium17_Mini_Project2_TagName {
 
 
 
-
+driver.quit();
 
 
     }

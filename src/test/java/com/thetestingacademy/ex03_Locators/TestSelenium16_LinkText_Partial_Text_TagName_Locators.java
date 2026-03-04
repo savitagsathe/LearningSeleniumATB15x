@@ -8,48 +8,37 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 public class TestSelenium16_LinkText_Partial_Text_TagName_Locators {
+@Description("Verify that create account negative TC")
+@Test
+    public void test_vwo_login(){
+
+WebDriver driver=new ChromeDriver();
+driver.get("https://app.vwo.com/#/login");
+
+// <a
+    // href="https://vwo.com/free-trial/?utm_medium=website&amp;utm_source=login-page&amp;utm_campaign=mof_eg_loginpage"
+    // class="text-link"
+    // data-qa="bericafeqo">
+    // Start a free trials
+    //
+    // </a>
+
+    //    // LinkText - Full Text match
+    //    // Partial Linktext - Partial Match
+
+//WebElement a_Tag_free_trail_full_match=driver.findElement(By.linkText("Start a free trial"));
+//a_Tag_free_trail_full_match.click();
+
+    WebElement a_Tag_free_trail_full_match=driver.findElement(By.partialLinkText("trial"));
+    a_Tag_free_trail_full_match.click();
+    // Start a free trial
+    // Start a free
+    // Start a
+    // Start , Trail, free, a, Star...
 
 
-    @Description("Verify that the create account Negative TC")
-    @Test
-    public void test_login_vwo() {
-
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://app.vwo.com");
-
-        // <a
-        // href="https://vwo.com/free-trial/?utm_medium=website&amp;utm_source=login-page&amp;utm_campaign=mof_eg_loginpage"
-        // class="text-link"
-        // data-qa="bericafeqo">
-        // Start a free trials
-        //
-        // </a>
-
-        //    // LinkText - Full Text match
-        //    // Partial Linktext - Partial Match
-
-//
-//        WebElement a_Tag_free_trail_full_match = driver.findElement(By.linkText("Start a free trial"));
-//        a_Tag_free_trail_full_match.click();
-
-
-        WebElement a_tag_partial_match = driver.findElement(By.partialLinkText("trial"));
-        // Start a free trial
-        // Start a free
-        // Start a
-        // Start , Trail, free, a, Star...
-        a_tag_partial_match.click();
-
-
-
-        driver.quit();
-
-
-
-
-
-
-    }
+    driver.quit();
+}
 
 
 

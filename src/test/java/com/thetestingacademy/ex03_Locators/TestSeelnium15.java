@@ -1,5 +1,6 @@
 package com.thetestingacademy.ex03_Locators;
 
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,11 +12,10 @@ public class TestSeelnium15 {
 
     @Test
     public void test_app_vwo_com() throws InterruptedException {
-        // Driver Managing
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://app.vwo.com");
+        //driver managing
+        WebDriver driver=new ChromeDriver();
+        driver.get("https://app.vwo.com/#/login");
         driver.manage().window().maximize();
-
 
         // Locators
         // Step 1 - Find the EMAIL ID and enter the admin@admin.com.
@@ -34,7 +34,7 @@ public class TestSeelnium15 {
         // data-gtm-form-interact-field-id="0"
         // > close Tag
 
-        WebElement email_input_box = driver.findElement(By.id("login-username"));
+        WebElement email_input_box=driver.findElement(By.id("login-username"));
         email_input_box.sendKeys("admin@admin.com");
 
         // 2. Find the password inputbox and enter the password
@@ -45,7 +45,8 @@ public class TestSeelnium15 {
         // name="password"
         // id="login-password"
         // data-qa="jobodapuxe">
-        WebElement password_input_box = driver.findElement(By.name("password"));
+
+        WebElement password_input_box=driver.findElement(By.id("login-password"));
         password_input_box.sendKeys("wrongpass@123");
 
         // 3. Find the submit button and click on it.
@@ -57,7 +58,7 @@ public class TestSeelnium15 {
         // data-qa="sibequkica"
         // >
 
-        WebElement button_submit = driver.findElement(By.id("js-login-btn"));
+        WebElement button_submit=driver.findElement(By.id("js-login-btn"));
         button_submit.click();
 
         // Step 4 - Wait some time.
@@ -69,24 +70,15 @@ public class TestSeelnium15 {
         // data-qa="rixawilomi">
         // Your email, password, IP address or location did not match</div>
 
-        WebElement error_message = driver.findElement(By.className("notification-box-description"));
+        WebElement error_message=driver.findElement(By.className("notification-box-description"));
         System.out.println(error_message.getText());
 
-
-
-
-
-        // Assertions
-        // error_message - AR
+        //Assertion
+        //error mesage-AR
         // "Your email, password, IP address or location did not match" - ER
-        Assert.assertEquals(error_message.getText(), "Your email, password, IP address or location did not match");
+        Assert.assertEquals(error_message.getText(),"Your email, password, IP address or location did not match");
 
-
-
-
-        // Quit
+        //close app
         driver.quit();
-
-
     }
 }

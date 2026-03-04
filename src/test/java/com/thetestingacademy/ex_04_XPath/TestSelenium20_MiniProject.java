@@ -15,6 +15,8 @@ public class TestSelenium20_MiniProject {
     @Owner("Pramod")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify login is working")
+
+
     @Test
     public void test_OHRM_login() {
         WebDriver driver = new ChromeDriver();
