@@ -1,16 +1,32 @@
 package com.thetestingacademy;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Practice {
     public static void main(String[] args) {
-        //Write a Java program to count the total number of characters in a given string (excluding spaces).ava program to convert a given string into uppercase and print the result.
-        Scanner s=new Scanner(System.in);
-        System.out.println("Enter the first string");
-        String str1=s.nextLine();
-        //tring rev="";
+        int num[]={25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
 
-for (int i=1;i<= str1.length();i++)  {
-        System.out.print(str1.charAt(str1.length()-i));
-    }
-}}
+//        Arrays.sort(num);
+//        System.out.println(num[num.length-1]);
+          int max=num[0];
+          for (int i=0;i<num.length;i++){
+              if (num[i]>max){
+                  max=num[i];
+              }
+          }
+        System.out.println("Largest num in array is="+max);
+        int min = num[0];
+        for (int i = 0; i < num.length; i++) {
+
+            if (num[i] < min) {
+                min = num[i];
+            }
+
+
+        }
+
+        System.out.println(min);
+
+    }}
